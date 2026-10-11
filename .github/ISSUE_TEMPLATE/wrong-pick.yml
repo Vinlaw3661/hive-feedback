@@ -1,0 +1,46 @@
+name: Wrong pick
+description: Hive picked the wrong tool, stopped when a tool fit, or picked when it should have stopped.
+title: "Wrong pick: "
+labels: [wrong-pick]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is public. Rewrite the request without names, emails, account numbers or anything else
+        personal; what matters is the kind of request, not your data.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong
+      options:
+        - Hive picked a tool that can't do what was asked
+        - Hive picked a worse tool than one it could call
+        - Hive stopped, but a callable tool fits
+        - Hive picked a tool, but should have stopped
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: The request
+      description: What the agent asked Hive, rewritten without personal details.
+      placeholder: Calculate how long $18,000 of savings lasts at $3,200 a month.
+    validations:
+      required: true
+  - type: input
+    id: picked
+    attributes:
+      label: The tool Hive picked
+      description: Its tool_id from the search response, or "stopped".
+      placeholder: ai.senaro/personal-finance/calculate_emergency_fund
+  - type: input
+    id: expected
+    attributes:
+      label: The tool that should have been picked
+      description: Its tool_id, if you know it, or "stop".
+      placeholder: ai.senaro/personal-finance/calculate_runway
+  - type: textarea
+    id: details
+    attributes:
+      label: Anything else
+      description: The routing_notes or hints from the response, or why the pick was wrong.

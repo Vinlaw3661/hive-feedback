@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report from tryhive.dev
+    url: https://tryhive.dev/feedback
+    about: A short form that fills in the report for you.
+  - name: Testing prompt
+    url: https://tryhive.dev/prompts/testing
+    about: What Hive covers today, and how to tell its mistakes from a connector's.

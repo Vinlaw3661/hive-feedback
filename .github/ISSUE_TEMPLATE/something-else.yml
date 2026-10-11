@@ -1,0 +1,21 @@
+name: Something else
+description: An error, a slow search, confusing hints or docs, or an idea.
+title: ""
+labels: [other]
+body:
+  - type: markdown
+    attributes:
+      value: This repository is public. Leave out anything personal.
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what Hive did instead.
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Your agent
+      description: Which client or agent you connected Hive to.
+      placeholder: Claude Desktop

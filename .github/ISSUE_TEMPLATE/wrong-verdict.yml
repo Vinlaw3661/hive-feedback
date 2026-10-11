@@ -1,0 +1,44 @@
+name: Wrong verdict
+description: Hive judged a tool's result wrongly, or its prediction before the call was far off.
+title: "Wrong verdict: "
+labels: [wrong-verdict]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is public. Leave out the tool's result and anything personal; describe what it returned
+        instead.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong
+      options:
+        - Hive said the result failed, but it answered the request
+        - Hive said the result was fine, but it didn't answer the request
+        - Hive named the wrong failure mode
+        - The prediction before the call was far off
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: The request
+      description: What the agent asked, rewritten without personal details.
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: The tool called
+      description: Its tool_id.
+  - type: input
+    id: verdict
+    attributes:
+      label: Hive's verdict
+      description: The outcome's failure_mode and satisfaction_score.
+      placeholder: EMPTY_RESULT, 0.4
+  - type: textarea
+    id: details
+    attributes:
+      label: What the result actually was
+      description: Describe it rather than pasting it.
