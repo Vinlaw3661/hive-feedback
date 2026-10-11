@@ -1,2 +1,2 @@
-# hive-feedback
-Repository for e everything hive issues and feedback
+# Hive Feedback
+Repository for everything hive issues and feedback
